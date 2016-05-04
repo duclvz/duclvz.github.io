@@ -1,0 +1,274 @@
+@import 'normalize';
+@import 'rouge-github';
+@import 'variables';
+
+@mixin large {
+  @media screen and (min-width: #{$large-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: #{$medium-breakpoint}) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  color: $body-text-color;
+  background: $body-background;
+}
+
+a {
+  color: $body-link-color;
+  text-decoration: none;
+}
+
+.main-content {
+  font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  word-wrap: break-word;
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  @include large {
+    padding: 2rem 2rem;
+    font-size: 1.2rem;
+  }
+
+  @include medium {
+    font-size: 1.2rem;
+  }
+
+  @include small {
+    font-size: 1.1rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+
+  h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  h5 small,
+  h6 small {
+    font-family: inherit;
+    font-size: 0.6em;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    margin-top: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  h4 {
+    font-size: 1em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h5 {
+    font-size: 0.8em;
+    margin-top: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  h6 {
+    font-size: 0.6em;
+    margin-top: 0.6rem;
+    margin-bottom: 0.3rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: inherit;
+    font-weight: normal;
+    color: $section-headings-color;
+  }
+
+  p {
+    margin-bottom: 1em;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  code {
+    padding: 2px 4px;
+    font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 1rem;
+    color: $code-text-color;
+    background-color: $code-bg-color;
+    border-radius: 0.3rem;
+  }
+
+  pre {
+    padding: 1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font: 1rem Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    color: $code-text-color;
+    word-wrap: normal;
+    background-color: $code-bg-color;
+    border: solid 1px $border-color;
+    border-radius: 0.3rem;
+
+    > code {
+      padding: 0;
+      margin: 0;
+      font-size: 1rem;
+      color: $code-text-color;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+  }
+
+  .highlight {
+    margin-bottom: 1rem;
+
+    pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+  }
+
+  .highlight pre,
+  pre {
+    padding: 0.8rem;
+    overflow: auto;
+    font-size: 1rem;
+    line-height: 1.45;
+    border-radius: 0.3rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  pre code,
+  pre tt {
+    display: inline;
+    max-width: initial;
+    padding: 0;
+    margin: 0;
+    overflow: initial;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+
+    &:before,
+    &:after {
+      content: normal;
+    }
+  }
+
+  ul,
+  ol {
+    margin-top: 0;
+    font-size: inherit;
+  }
+
+  blockquote {
+    padding: 0 1rem;
+    margin-left: 0;
+    color: $blockquote-text-color;
+    border-left: 0.3rem solid $border-color;
+    font-family: inherit;
+    font-size: inherit;
+
+    &:before,
+    &:after {
+      content: initial;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    word-break: normal;
+    word-break: keep-all; // For Firefox to horizontally scroll wider tables.
+    -webkit-overflow-scrolling: touch;
+
+    th {
+      font-weight: bold;
+    }
+
+    th,
+    td {
+      padding: 0.5rem 1rem;
+      border: 1px solid $table-border-color;
+    }
+  }
+
+  dl {
+    padding: 0;
+
+    dt {
+      padding: 0;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    dd {
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  hr {
+    height: 1px;
+    padding: 0;
+    margin: 1rem 0;
+    background-color: $hr-border-color;
+    border: 0;
+  }
+}

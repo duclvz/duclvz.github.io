@@ -1,0 +1,19 @@
+# Main navigation list
+main:
+  - title: "Discover"
+    url: /discover
+    children:
+      - title: "Child Link 1"
+        url: /child-1-page-url/
+      - title: "Child Link 2"
+        url: /child-2-page-url/
+      - title: "Child Link 3"
+        url: /child-3-page-url/
+  - title: "Tags"
+    url: /tags
+  - title: "Categories"
+    url: /categories
+  - title: "Blog"
+    url: /blog
+  - title: "About"
+    url: /about

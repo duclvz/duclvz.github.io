@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="main-content mdl-grid">
+  <article class="mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+      <div class="mdl-cell mdl-cell--11-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <div class="post-header">
+          <h1 id="post-title">
+            <strong>{{ page.title }}</strong>
+          </h1>
+          {% for tag in page.tags %}
+            <button type="button" class="mdl-chip">
+              <span class="mdl-chip__text">{{tag}}</span> <!-- <span class="mdl-chip__action">77</span> -->
+            </button>
+          {% endfor %}
+          <div>{{ page.date | date: "%B %d, %Y" }}</div>
+        </div>
+      </div>
+      <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone">{% include vote.html %}</div>
+      <div class="mdl-cell mdl-cell--11-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <div class="post-content">{{ content }}</div>
+        <div class="post-footer">Like & Share & More...</div>
+      </div>
+      <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+      <div class="mdl-cell mdl-cell--11-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <div class="post-comment">
+          <h1><strong>Comment</strong></h1>
+        </div>
+      </div>
+    </div>
+  </article>
+  <aside class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+    {% include author.html %} {% include tags.html %}
+    <div style="position: -webkit-sticky; position: sticky; top: 64px; padding-top: 10px;">
+      {% include toc.html %}
+    </div>
+  </aside>
+</div>

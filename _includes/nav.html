@@ -1,0 +1,24 @@
+{% assign navigation = site.data.navigation["main"] %}
+
+{% for nav in navigation %}
+  {% if nav.url %}
+    {% if nav.url contains "://" %}
+      {% assign nav_url = nav.url %}
+    {% else %}
+      {% assign nav_url = nav.url | relative_url %}
+    {% endif %}
+    <span class="mdl-navigation__link mdl-typography--text-uppercase">
+      <a href="{{ nav_url }}">{{ nav.title }} {% if nav.children %} <i class="material-icons">keyboard_arrow_down</i> {% endif %}</a>
+      {% if nav.children %}
+        {% assign sublist = nav.children %}
+        <ul class="sub-nav">
+          {% for sub in sublist %}
+            <li><a href="{{ sub.url }}">{{ sub.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </span>
+  {% else %}
+    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">{{ nav.title }}</a>
+  {% endif %}
+{% endfor %}

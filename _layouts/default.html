@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header has-tabs">
+      <div class="page-banner mdl-layout__header-row">
+        <h1><strong>Banner</strong></h1>
+      </div>
+      {% include header.html %}
+      <div class="mdl-layout__content">
+        <div class="page-banner">
+          <h1><strong>Banner</strong></h1>
+        </div>
+        {{ content }}
+        {% include footer.html %}
+      </div>
+    </div>
+    <script src="/assets/js/material.min.js"></script>
+  </body>
+</html>
