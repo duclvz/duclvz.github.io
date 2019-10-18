@@ -30,7 +30,7 @@ Here is a bunch of words from different categories that had some influence on my
 * Microservices, Amazon Web Services, AWS EC2, AWS Lambda, AWS DynamoDB, Firebase, Google App Engine (Java)
 * Cloud9 IDE, VS Code, docker, vagrant, sublime text, vim, git, shell, ssh, cron, rsync
 
-Learn more about what i did [**Github**](https://github.com/duclvz){:target="_blank"}
+Learn more about what i did [**Github**](https://github.com/duclvz){:target="_blank"}  
 You can contact me via [duclvzz@gmail.com](mailto:duclvzz@gmail.com)  
 Find me everywhere as [**@duclvz**](https://www.google.com/search?q=duclvz){:target="_blank"}
 <p>
