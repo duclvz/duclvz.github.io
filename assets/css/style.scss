@@ -15,12 +15,16 @@
   }
   &.active {
     display: block !important;
+    padding-left: 1rem;
   }
   &#page-title {
     display: none;
   }
 }
 
+a.page-title img {
+  width: 64px;
+}
 
 .page-title ~ .mdl-layout--small-screen-only {
   position: absolute;
