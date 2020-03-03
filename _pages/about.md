@@ -15,9 +15,9 @@ permalink: /about
 * I was a student at [University of Engineering and Technology - VNU](https://uet.vnu.edu.vn/) (2012-2016)
 
 ## I do
-* Building web applications & web services mostly in Javascript, Nodejs, Expressjs & NoSQL DB
+* Building web applications & services mostly in Javascript, Nodejs (Expressjs & MongoDB/PostgreSQL)
 * Composing components/modules in React/Redux (or any other tool that gets the job done)
-* Streamlining tasks using Webpack/Gulp/NPM/bash
+* Streamlining tasks using Webpack/NPM/bash
 * Testing with Chai/Mocha
 
 ## I did
@@ -25,12 +25,12 @@ Here is a bunch of words from different categories that had some influence on my
 * Windows, Linux, Mac OS, CentOS, Linux, Android, iOS, IoT
 * Functional Programming, Declarative Programming
 * Javascript, Typescript, Python, C/C++, Java, PHP, SQL, Bash, MQTT
-* Node.js, Express.js, Webpack, Npm, React.js, Redux, Immutable.js, Less/SASS, Gulp.js, PWA, Isomorphic, Socket, Websocket, Thread, Nginx, SSR, Cluster, HAProxy, SAT, sat4j, SmartHome, Arduino
-* MongoDB, AWS DynamoDB, SQLite, MySQL, Galera Cluster, JDO Datastore
+* Node.js, Express.js, Webpack, Npm, React.js, Redux, Less/SASS, PWA, Isomorphic, Socket, Websocket, Thread, Nginx, SSR, Cluster, HAProxy, SAT, sat4j, SmartHome, Arduino
+* MongoDB, AWS DynamoDB, PostgreSQL, SQLite, MySQL, Galera Cluster, JDO Datastore
 * Microservices, Amazon Web Services, AWS EC2, AWS Lambda, AWS DynamoDB, Firebase, Google App Engine (Java)
 * Cloud9 IDE, VS Code, docker, vagrant, sublime text, vim, git, shell, ssh, cron, rsync
 
-Learn more about what i did [**Github**](https://github.com/duclvz){:target="_blank"}  
+Learn more about what i did at [**Github**](https://github.com/duclvz){:target="_blank"}  
 You can contact me via [duclvzz@gmail.com](mailto:duclvzz@gmail.com)  
 Find me everywhere as [**@duclvz**](https://www.google.com/search?q=duclvz){:target="_blank"}
 <p>
