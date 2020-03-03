@@ -41,6 +41,10 @@ collections:
     output: true
     permalink: /:collection/:path/
 
+google_analytics:
+  tracking_id: UA-80515457-1
+  anonymize_ip: true
+
 defaults:
 
 # Exclude from processing.

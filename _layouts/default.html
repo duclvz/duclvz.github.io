@@ -16,5 +16,12 @@
       </div>
     </div>
     <script src="/assets/js/material.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.tracking_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics.tracking_id }}',{ 'anonymize_ip': {{ site.google_analytics.anonymize_ip | default: false }}});
+    </script>
   </body>
 </html>
