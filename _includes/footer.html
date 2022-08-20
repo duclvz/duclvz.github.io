@@ -1,9 +1,33 @@
-<footer class="site-footer mdl-mini-footer">
-  <div class="mdl-mini-footer__left-section">
-    <div class="mdl-logo">© 2020 duclvz</div>
-    <ul class="mdl-mini-footer__link-list">
-      <li><a href="#">Help</a></li>
-      <li><a href="#">Privacy & Terms</a></li>
-    </ul>
-  </div>
+<footer class="footer">
+  <section class="footer__content">
+    <div class="footer__row">
+      <a class="footer__logo-link" title="{{ site.title }}" href="{{ '/' | relative_url }}">
+        <img src="{{ site.logo | relative_url | prepend: site.cdn }}" alt="{{ site.title }}" title="{{ site.title }}" />
+      </a>
+      <div class="footer__copy">
+        <p class="footer__description">
+          Simple is the best. Make Things As Simple As Possible, But Not Simpler.
+        </p>
+      </div>
+    </div>
+    <div class="footer__row footer-links">
+      <ul class="footer-links__nav-list">
+        <li class="footer-links__nav-list-item">
+          <span>Copyright © {{site.name}} {{ site.time  | date: "%Y" }}</span>
+        </li>
+        <li class="footer-links__nav-list-item">
+          <a href="/about" class="footer-links__nav-list-link">About</a>
+        </li>
+        <li class="footer-links__nav-list-item">
+          <a href="/privacy-policy" class="footer-links__nav-list-link">Privacy Policy</a>
+        </li>
+        <li class="footer-links__nav-list-item">
+          <a href="/terms-of-service" class="footer-links__nav-list-link">Terms of Service</a>
+        </li>
+        <li class="footer-links__nav-list-item">
+          <a href="/contact" class="footer-links__nav-list-link">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </section>
 </footer>

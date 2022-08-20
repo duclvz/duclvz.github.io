@@ -1,0 +1,64 @@
+<header class="mdc-top-app-bar">
+  <div class="mdc-top-app-bar__row search-form" id="top-level-search-bar">
+    <form class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="top-level-search-form" onkeydown="return event.key != 'Enter';">
+      <input type="text" class="search-form__input" id="top-level-search-input" autocomplete="off"
+        placeholder="Search" />
+    </form>
+    <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+      <button class="search-form__button mdc-icon-button" id="top-level-search-close" aria-label="Close search">
+        {{ site.data.icons.close }}
+      </button>
+    </div>
+  </div>
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <div class="mdc-menu-surface--anchor">
+        <button id="app-menu-button" class="mdc-icon-button mdc-top-app-bar__navigation-icon--unbounded"
+          aria-label="More">
+          <svg role="img" aria-labelledby="app-icon" viewBox="0 0 24 24" aria-hidden="true"><title id="app-icon">More</title> <path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path> </svg>
+        </button>
+        <div id="app-menu" class="mdc-menu mdc-menu-surface" tabindex="-1">
+          <div class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+            {% for category in site.data.categories %}
+              <a class="mdc-list-item mdc-button" role="menuitem" href="{{ category.path }}">
+                {{ category.icon }}
+                <span class="mdc-button__label">{{ category.name }}</span>
+              </a>
+            {% endfor %}
+            <div class="mdc-list-divider" role="separator"></div>
+            <a class="mdc-list-item mdc-button" role="menuitem" href="/terms-of-service">
+              <svg role="img" aria-labelledby="tos-icon" width="24" height="24" viewBox="0 0 24 24"> <title id="tos-icon">Terms of Service</title> <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm7 10c0 4.52-2.98 8.69-7 9.93-4.02-1.24-7-5.41-7-9.93V6.3l7-3.11 7 3.11V11zm-11.59.59L6 13l4 4 8-8-1.41-1.42L10 14.17z" ></path> </svg>
+              <span class="mdc-button__label">Terms of Service</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% if page.url == '/' %}
+      <h1 class="home-logo"><a title="{{ site.title }}" href="{{ '/' | relative_url }}">
+        <img src="{{ site.logo | relative_url | prepend: site.cdn }}" alt="{{ site.title }}" title="{{ site.title }}" />
+      </a></h1>
+      {% else %}
+      <a class="home-logo" title="{{ site.title }}" href="{{ '/' | relative_url }}">
+        <img src="{{ site.logo | relative_url | prepend: site.cdn }}" alt="{{ site.title }}" title="{{ site.title }}" />
+      </a>
+      {% endif %}
+    </section>
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+      {% for category in site.data.categories %}
+        <div class="nav-category">
+          <a class="mdc-button" href="{{ category.path }}">
+            {{ category.icon }}
+            <span class="mdc-button__label">{{ category.name }}</span>
+          </a>
+        </div>
+      {% endfor %}
+      <div class="nav-category">
+      
+      </div>
+      <button class="search-form__button mdc-icon-button mdc-top-app-bar__navigation-icon--unbounded"
+        aria-label="Search" alt="Search">
+        {{ site.data.icons.search }}
+      </button>
+    </section>
+  </div>
+</header>

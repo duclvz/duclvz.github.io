@@ -1,0 +1,21 @@
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/3.2.0/material-components-web.min.js"></script>
+
+{% if ((jekyll.environment == 'production') and site.google_analytics) %}
+{% include google-analytics.html %}
+{% endif %}
+
+{% if page.comments %}
+{% include disqus-comments.html %}
+{% endif %}
+
+{% if jekyll.environment == 'workbox' %}
+{% include service-worker.html %}
+{% endif %}
+
+{% if site.doorbell %}
+{% include doorbell.html %}
+{% endif %}
+
+{% if site.cookie_consent == true %}
+{% include cookie-consent.html %}
+{% endif %}

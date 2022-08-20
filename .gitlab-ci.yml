@@ -1,0 +1,29 @@
+image: timbru31/ruby-node:2.7-14
+
+variables:
+  JEKYLL_ENV: production
+  LC_ALL: C.UTF-8
+  FF_USE_FASTZIP: 1
+  CACHE_COMPRESSION_LEVEL: fastest
+
+pages:
+  stage: deploy
+  script:
+  - bundle install --path vendor
+  - npm i --loglevel=error
+  - npm run build:pwa
+  - find _site -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\|ico\|png\|jpg\)$' -exec gzip -9 -f -kv {} \;
+  - mv _site public
+  cache:
+    key:
+      files:
+        - package-lock.json
+        - Gemfile.lock
+    paths:
+      - node_modules/
+      - vendor/
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
