@@ -28,7 +28,7 @@ permalink: /
                     class="thumbnail-image"
                     alt="{{ post.title }}"
                     title="{{ post.title }}"
-                    src="{{ post.thumbnail | relative_url | prepend: site.cdn }}"
+                    src="{%if post.thumbnail %}{{ post.thumbnail | relative_url | prepend: site.cdn }}{% else %}{{ '/assets/images/slash.svg' | relative_url | prepend: site.cdn }}{% endif %}"
                   />
                 </a>
                 <a href="{{ post.url | relative_url }}" class="video-metadata">
@@ -56,7 +56,7 @@ permalink: /
                     class="thumbnail-image"
                     alt="{{ post.title }}"
                     title="{{ post.title }}"
-                    src="{{ post.thumbnail | relative_url | prepend: site.cdn }}"
+                    src="{%if post.thumbnail %}{{ post.thumbnail | relative_url | prepend: site.cdn }}{% else %}{{ '/assets/images/slash.svg' | relative_url | prepend: site.cdn }}{% endif %}"
                   />
                 </a>
                 <a href="{{ post.url | relative_url }}" class="video-metadata">
