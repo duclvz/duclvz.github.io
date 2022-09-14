@@ -2,6 +2,7 @@
 layout: post
 title: 8 JS frameworks nhỏ mà có võ
 categories: blog
+comments: true
 tags:
   - javascript
   - frameworks
