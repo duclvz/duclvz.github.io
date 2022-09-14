@@ -53,14 +53,14 @@
   --mdc-theme-text-hint-on-dark: hsla(0, 0%, 100%, 0.5);
   --mdc-theme-text-disabled-on-dark: hsla(0, 0%, 100%, 0.5);
   --mdc-theme-text-icon-on-dark: hsla(0, 0%, 100%, 0.5);
-  --mdc-layout-grid-margin-desktop: 24px;
-  --mdc-layout-grid-gutter-desktop: 24px;
+  --mdc-layout-grid-margin-desktop: 12px;
+  --mdc-layout-grid-gutter-desktop: 12px;
   --mdc-layout-grid-column-width-desktop: 72px;
-  --mdc-layout-grid-margin-tablet: 12px;
-  --mdc-layout-grid-gutter-tablet: 12px;
+  --mdc-layout-grid-margin-tablet: 8px;
+  --mdc-layout-grid-gutter-tablet: 8px;
   --mdc-layout-grid-column-width-tablet: 72px;
-  --mdc-layout-grid-margin-phone: 12px;
-  --mdc-layout-grid-gutter-phone: 8px;
+  --mdc-layout-grid-margin-phone: 8px;
+  --mdc-layout-grid-gutter-phone: 4px;
   --mdc-layout-grid-column-width-phone: 72px;
 }
 canvas,
@@ -177,7 +177,7 @@ main .post {
     margin-top: 1em;
   }
   .post-footer {
-    
+    margin: inherit;
   }
 }
 .mdc-typography {
@@ -582,11 +582,6 @@ main .post {
   #player iframe {
     height: 56.25vw !important;
   }
-  .home-logo {
-    img {
-      height: 56px !important;
-    }
-  }
 }
 
 #player:empty {
@@ -617,27 +612,10 @@ main .post {
 }
 
 .main-video-title {
+  display: flex;
   margin-top: 5px;
   h1 {
     font-size: 18px;
-  }
-}
-@keyframes blinker {
-  50% {
-    background-color: rgba(255,0,0,0.55);
-  }
-}
-
-.main-video-info {
-  display: flex;
-  margin-top: 0;
-  border-bottom: 1px solid #0000001a;
-  padding-bottom: 8px;
-
-  .main-view-count {
-    margin: auto 0;
-    color: #606060;
-    font-size:  15px;
   }
   .playlist-select {
     flex: 1 1 auto;
@@ -662,6 +640,24 @@ main .post {
         color: #ffff7f;
       }
     }
+  }
+}
+@keyframes blinker {
+  50% {
+    background-color: rgba(255,0,0,0.55);
+  }
+}
+
+.main-video-info {
+  display: flex;
+  margin-top: 0;
+  border-bottom: 1px solid #0000001a;
+  padding-bottom: 8px;
+
+  .main-view-count {
+    margin: auto 0;
+    color: #606060;
+    font-size:  15px;
   }
 }
 .main-video-category, .category-header, .category-title {
@@ -854,6 +850,10 @@ main .post {
 .video-item {
   display: flex;
   width: fit-content;
+  background-color: transparent;
+  border-radius: 10px;
+  transition: all 0.4s ease 0s;
+  padding: 10px 10px;
   &:hover .video-thumbnail svg {
     display: block;
   }
@@ -864,7 +864,10 @@ main .post {
     .thumbnail-image {
       width: 168px;
       height: 94px;
+      object-fit: cover;
       border-radius: 5px;
+      box-shadow: 0 19px 70px 0 rgb(0 0 0 / 12%);
+      transition: all 0.2s;
     }
     svg {
       position: absolute;
@@ -894,6 +897,14 @@ main .post {
       -webkit-box-orient: vertical;
       white-space: normal;
       -webkit-line-clamp: 2;
+
+      a {
+        color: #0d0d0d;
+        text-decoration: none;
+        &:hover {
+          color: #109CD9;
+        }
+      }
     }
     .video-category {
       display: flex;
@@ -929,6 +940,9 @@ main .post {
       -webkit-box-orient: vertical;
       white-space: normal;
       -webkit-line-clamp: 3;
+      &.live-desc {
+        max-height: 2rem;
+      }
     }
     .video-live-now {
       background: transparent;
@@ -943,6 +957,14 @@ main .post {
       text-transform: uppercase;
     }
   }
+}
+.video-item:hover {
+  background-color: rgba(255,255,255,1);
+  border-radius: 10px;
+  box-shadow: 0 35px 70px 0 rgb(0 0 0 / 12%);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .category-section {
@@ -1045,8 +1067,8 @@ main .post {
 
 @media (max-width: 839px) and (min-width: 480px) {
   .post, .video-list, .category-section, .feature-section {
-    margin-left: 32px;
-    margin-right: 32px;
+    margin-left: 16px;
+    margin-right: 16px;
   }
 }
 
@@ -1094,4 +1116,25 @@ main.mdc-top-app-bar--fixed-adjust {
 
 .feature-section {
   margin-bottom: 12px;
+}
+
+.sticky-section {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 64px;
+}
+
+table.feature {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: .6rem;
+  th {
+    text-align: left;
+    border: 1px solid #e6e6e6;
+    padding: 2px 8px;
+  }
+  td {
+    border: 1px solid #e6e6e6;
+    padding: 2px 8px;
+  }
 }

@@ -20,27 +20,29 @@ permalink: /
             </div>
             <div class="feature-section mdc-layout-grid__inner">
             {% for post in site.posts limit:5 %}
-              <div class="video-item mdc-layout-grid__cell {% if forloop.index == 1 %} mdc-layout-grid__cell--span-8 {% else %} mdc-layout-grid__cell--span-4 {% endif %} {% if forloop.index == 2 %} has-desc {% endif %} mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <a href="{{ post.url | relative_url }}" class="video-thumbnail" data-originsrc="{{ post.thumbnail | relative_url | prepend: site.cdn }}"
-                  {% if post.preview %} data-previewsrc="{{ post.preview | relative_url }}" {% endif %}
-                >
+              <article class="video-item mdc-layout-grid__cell {% if forloop.index == 1 %} mdc-layout-grid__cell--span-8 {% else %} mdc-layout-grid__cell--span-4 {% endif %} {% if forloop.index == 2 %} has-desc {% endif %} mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                <header class="video-thumbnail" data-originsrc="{{ post.thumbnail | relative_url | prepend: site.cdn }}"
+                  {% if post.preview %} data-previewsrc="{{ post.preview | relative_url }}" {% endif %}>
+                <a href="{{ post.url | relative_url }}">
                   <img
                     class="thumbnail-image"
+                    itemprop="image"
                     alt="{{ post.title }}"
                     title="{{ post.title }}"
                     src="{%if post.thumbnail %}{{ post.thumbnail | relative_url | prepend: site.cdn }}{% else %}{{ '/assets/images/slash.svg' | relative_url | prepend: site.cdn }}{% endif %}"
                   />
                 </a>
-                <a href="{{ post.url | relative_url }}" class="video-metadata">
-                  <h3 class="video-title"> {{ post.title }} </h3>
+                </header>
+                <div class="video-metadata">
+                  <h2 class="video-title" itemprop="headline"> <a rel="bookmark" href="{{ post.url | relative_url }}"> {{ post.title }} </a> </h2>
                   <div class="video-category">
-                  <span>{{ post.date | date_to_string }} </span>
+                  <time datetime="{{ post.date }}">{{ post.date | date_to_string }} </time>
                   </div>
                   <div class="video-desc">
                     <span>{{ post.description | truncatewords: 30 }}</span>
                   </div>
-                </a>
-              </div>
+                </div>
+              </article>
             {% endfor %}
             </div>
             <div class="video-list mdc-layout-grid__inner">
@@ -48,27 +50,29 @@ permalink: /
               {% if forloop.index <= 5 %}
                 {% continue %}
               {% endif %}
-              <div class="video-item mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-                <a href="{{ post.url | relative_url }}" class="video-thumbnail" data-originsrc="{{ post.thumbnail | relative_url | prepend: site.cdn }}"
-                  {% if post.preview %} data-previewsrc="{{ post.preview | relative_url }}" {% endif %}
-                >
+              <article class="video-item mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                <header class="video-thumbnail" data-originsrc="{{ post.thumbnail | relative_url | prepend: site.cdn }}"
+                  {% if post.preview %} data-previewsrc="{{ post.preview | relative_url }}" {% endif %}>
+                <a href="{{ post.url | relative_url }}">
                   <img
                     class="thumbnail-image"
+                    itemprop="image"
                     alt="{{ post.title }}"
                     title="{{ post.title }}"
                     src="{%if post.thumbnail %}{{ post.thumbnail | relative_url | prepend: site.cdn }}{% else %}{{ '/assets/images/slash.svg' | relative_url | prepend: site.cdn }}{% endif %}"
                   />
                 </a>
-                <a href="{{ post.url | relative_url }}" class="video-metadata">
-                  <h3 class="video-title"> {{ post.title }} </h3>
+                </header>
+                <div class="video-metadata">
+                  <h2 class="video-title" itemprop="headline"> <a rel="bookmark" href="{{ post.url | relative_url }}"> {{ post.title }} </a> </h2>
                   <div class="video-category">
-                  <span>{{ post.date | date_to_string }} </span>
+                  <time datetime="{{ post.date }}">{{ post.date | date_to_string }} </time>
                   </div>
                   <div class="video-desc">
                     <span>{{ post.description | truncatewords: 30 }}</span>
                   </div>
-                </a>
-              </div>
+                </div>
+              </article>
             {% endfor %}
             </div>
           </div>
